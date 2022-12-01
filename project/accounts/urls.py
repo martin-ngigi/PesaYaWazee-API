@@ -1,5 +1,5 @@
 from django.urls import path
-from accounts import apiviews,views
+from accounts import apiviews,views, money
 
 urlpatterns = [
 
@@ -11,7 +11,8 @@ urlpatterns = [
     path('account/', apiviews.AccountLists.as_view(),  name='Account'),
     path('transaction/', apiviews.TransactionLists.as_view(),  name='Transactins'),
     path('transaction/<int:pk>/', apiviews.TransactionLists.as_view(),  name='Transactins'),
-    path("sms/",views.sms, name="sms")
+    path("sms/",views.sms, name="sms"),
+    path("money/",views.sendmoney, name="money"),
 
     # can INSERT/CREATE AND SERCAH BY EMAIL OR IMMUNIZATION NAME
     # path('user-by-email-or-phone/', views.UsersList.as_view(), name='user-by-email-or-phone'),
