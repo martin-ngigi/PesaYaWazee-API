@@ -1,6 +1,9 @@
 from django.shortcuts import render
 import json
 from datetime import date
+from rest_framework.response import Response
+from django.http import HttpResponse
+import http.client
 
 
 # import package
@@ -36,7 +39,7 @@ def sms(request):
 
 @csrf_exempt
 def sendmoney(request):
-    if request.method =='GET':
+    if request.method =='POST':
         conn = http.client.HTTPSConnection("api.connect.stanbicbank.co.ke")
 
 
@@ -93,4 +96,4 @@ def sendmoney(request):
         pay = json.dumps(m_pay,indent=4,sort_keys=True)
         # print(type(pay))
         print(pay)
-        return Response(data=pay)
+        return HttpResponse(pay)
