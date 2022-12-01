@@ -17,6 +17,8 @@ class User(models.Model):
     nationId = models.CharField(max_length=20)
     status = models.CharField(max_length=1,choices=STATUSALIVE,default='A')
     kra = models.CharField(max_length=30)
+    imageIDFront = models.ImageField(upload_to='images', blank=True, null=True) 
+    imageIDBack = models.ImageField(upload_to='images', blank=True, null=True)  
     
     class Meta:
         ordering=('nationId',)
