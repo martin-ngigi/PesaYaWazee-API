@@ -9,6 +9,14 @@ import http.client
 # import package
 import africastalking
 from django.views.decorators.csrf import csrf_exempt 
+
+'''
+eg: POST ->
+{
+    "phonenumber": "+254725482843"
+}
+'''
+
 # Create your views here.
 @csrf_exempt
 def sms(request):

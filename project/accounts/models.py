@@ -2,6 +2,26 @@ from django.db import models
 
 # Create your models here.
 
+'''
+DESCRPTION
+-Every user two nested objects:
+    -Next of Kin(NOK)
+    -Account
+-Every Account has several Transaction
+
+eg:
+user{
+    nok{
+
+    }
+    account{
+        transaction{
+            
+        }
+    }
+}
+'''
+
 # Link https://www.geeksforgeeks.org/serializer-relations-django-rest-framework/
 
 STATUSALIVE = (('A','Alive'),('D','Dead'),)
@@ -26,15 +46,12 @@ class User(models.Model):
     def __str__(self):
         return self.idNumber +' '+ self.firstName
 
-# The UserImmunization model holds a ManyToOne relationship with the User model
-# The same immunization will not be assigned to more than one user, but one user can have multiple immunizations.
-# Hence, the UserImmunizationSerializer class should serialize only a single user instance, whereas, UserSerializer class should serialize one or more userimuniserializer instances (more than one immunization can be assigned to an user). 
 class NOK(models.Model):
     firstName = models.CharField(max_length=50)
     lastName = models.CharField(max_length=50)
     idNumber = models.CharField(max_length=20)
     phoneNumber = models.CharField(max_length=20)
-    user = models.ForeignKey(User,related_name='nok',on_delete=models.CASCADE) #NB: "user", "immunizations" must be the same as the one used in the serializers
+    user = models.ForeignKey(User,related_name='nok',on_delete=models.CASCADE) 
 
     class Meta:
         ordering = ('idNumber',)
@@ -43,7 +60,7 @@ class NOK(models.Model):
         return self.idNumber +' '+ self.firstName
 
 class Account(models.Model):
-    user = models.ForeignKey(User,related_name='account',on_delete=models.CASCADE) #NB: "user", "immunizations" must be the same as the one used in the serializers
+    user = models.ForeignKey(User,related_name='account',on_delete=models.CASCADE) 
     acc_number = models.CharField(max_length=50)
     status = models.CharField(max_length=1,choices=STATUS,default='I')
     balance = models.CharField(max_length=20)
@@ -58,7 +75,7 @@ class Transaction(models.Model):
     uuid = uuid.uuid1()
     
     code = models.CharField(default=uuid, max_length=50)
-    account = models.ForeignKey(Account,related_name='transaction',on_delete=models.CASCADE) #NB: "user", "immunizations" must be the same as the one used in the serializers
+    account = models.ForeignKey(Account,related_name='transaction',on_delete=models.CASCADE)
     timeStamp = models.DateTimeField(auto_now_add=True)
     amount = models.CharField(max_length=50)
     teller = models.CharField(max_length=50)

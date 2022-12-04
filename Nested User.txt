@@ -1,0 +1,123 @@
+{
+    "users": [
+        {
+            "id": 2,
+            "nok": [
+                {
+                    "id": 2,
+                    "firstName": "Kelvin",
+                    "lastName": "Chege",
+                    "idNumber": "3094857",
+                    "phoneNumber": "+254797292290",
+                    "user": 2
+                }
+            ],
+            "account": [
+                {
+                    "id": 2,
+                    "transaction": [
+                        {
+                            "id": 2,
+                            "code": "1a304ae5-717f-11ed-8c17-4851b7b990fa",
+                            "timeStamp": "2022-12-01T14:10:42.271255Z",
+                            "amount": "500",
+                            "teller": "Martin",
+                            "transactionStatus": "",
+                            "account": 2
+                        },
+                        {
+                            "id": 1,
+                            "code": "c3a12f45-7175-11ed-9421-4851b7b990fa",
+                            "timeStamp": "2022-12-01T12:47:10.961267Z",
+                            "amount": "500",
+                            "teller": "Martin",
+                            "transactionStatus": "Success",
+                            "account": 2
+                        }
+                    ],
+                    "acc_number": "78246473",
+                    "status": "A",
+                    "balance": "8384",
+                    "user": 2
+                }
+            ],
+            "firstName": "Martin",
+            "lastName": "Wainaina",
+            "idNumber": "3094857",
+            "dob": "12-11-1999",
+            "residence": "Kiambu",
+            "phoneNumber": "+254797292290",
+            "nationId": "1345",
+            "status": "A",
+            "kra": "DJDHYG384",
+            "imageIDFront": "/images/pic.jpg",
+            "imageIDBack": "/images/pic2.jpeg"
+        },
+        {
+            "id": 3,
+            "nok": [
+                {
+                    "id": 3,
+                    "firstName": "Martin",
+                    "lastName": "Wainaina",
+                    "idNumber": "888884",
+                    "phoneNumber": "+254797292290",
+                    "user": 3
+                }
+            ],
+            "account": [
+                {
+                    "id": 3,
+                    "transaction": [],
+                    "acc_number": "78246473",
+                    "status": "I",
+                    "balance": "5000",
+                    "user": 3
+                }
+            ],
+            "firstName": "Kelvin",
+            "lastName": "Chege",
+            "idNumber": "3094857",
+            "dob": "12-11-1999",
+            "residence": "Kiambu",
+            "phoneNumber": "078794839",
+            "nationId": "1345737",
+            "status": "A",
+            "kra": "83974938",
+            "imageIDFront": "/images/pic_H5DK7dT.jpg",
+            "imageIDBack": "/images/pic2_rAU27Pq.jpeg"
+        },
+        {
+            "id": 5,
+            "nok": [],
+            "account": [],
+            "firstName": "Kelvin",
+            "lastName": "Chege",
+            "idNumber": "1234567",
+            "dob": "12-11-1999",
+            "residence": "Kiambu",
+            "phoneNumber": "+254797292211",
+            "nationId": "4975",
+            "status": "A",
+            "kra": "DHEG893",
+            "imageIDFront": null,
+            "imageIDBack": null
+        },
+        {
+            "id": 4,
+            "nok": [],
+            "account": [],
+            "firstName": "George",
+            "lastName": "Phillips",
+            "idNumber": "7677889",
+            "dob": "12-11-1975",
+            "residence": "Nairobi",
+            "phoneNumber": "0798666567",
+            "nationId": "876655",
+            "status": "A",
+            "kra": "ASDDFRREE44",
+            "imageIDFront": "/images/Martin_ID_Front.jpg",
+            "imageIDBack": "/images/Martin_ID_Back.jpg"
+        }
+    ]
+}
