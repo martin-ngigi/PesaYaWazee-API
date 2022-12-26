@@ -26,18 +26,22 @@
 1.6 Install Django in the virtual environment by running the following command in the VS Code Terminal:
     python -m pip install django
 
-
+INSTALLATIONS 
+Exporting requirements:
+	pip freeze > requirements.txt
+Installing requirements:
+	pip install -r requirements.txt
 
 2.CREATING AND RUNNING DJANGO PROJECT
 2.1 Create the Django project
 In the VS Code Terminal where your virtual environment is activated, run the following command:
-    django-admin startproject mongo_django_project
+    django-admin startproject simpleblog
 
 2.2 Create an empty development database by running the following command:
     python manage.py migrate
 
 navigate to mongo_django_project by typing:
-    cd mongo_django_project
+    cd simpleblog
 2.3 To verify the Django project, make sure your virtual environment is activated, then start Django's development server using the command:
      python manage.py runserver
 
@@ -46,151 +50,5 @@ navigate to mongo_django_project by typing:
 
 3. CREATING DJANGO APP
 3.1 In the VS Code Terminal with your virtual environment activated, run the administrative utility's startapp command in your project folder (where manage.py resides):
-    python manage.py startapp mongo_django_app
-
-4. INSTALLATIONS
-Instructions
---------------
-1. pip install django
-2. pip install djongo
-3. pip install pytz
-4. pip install dnspython
-5. pip install pymongo==3.12.3
-
-EMAIL IS: profwainaina
-Create database in mongodb named  : smart-immunization-db
-Create collection in mongodb named : smart-immunization-collection
-
-Create a user name: wainaina
-Add password : 1234
-
-
-ERRORS TO EXPECT:
-1. django.core.exceptions.ImproperlyConfigured: 'djongo' isn't an available database backend or couldn't be imported. Check the above 
-exception. To use one of the built-in backends, use 'django.db.backends.XXX', where XXX is one of:
-    'mysql', 'oracle', 'postgresql', 'sqlite3'
-
-1.1 To solve above error :
-    pip install pytz
-
-
-
-
-Make migrations:
-    python manage.py makemigrations 
-    python manage.py migrate
-
-CRUD OPERATIONS
-1. Install django-rest-framework by running:
-    pip install django-rest-framework
-2. Add the module 'rest_framework" in installed apps in settings.py.
-3. Now, we will create new app inside django project by typing this command:
-    cd .\mongo_django_project\
-    python manage.py startapp api
-4. Add the apps inside settings.py > installed apps. 'api'
-5. Create urls.py file inside api folder and include that urls.py file in your django project root urls.
-
-
-
-CRUD OPERATIONS:
-CREATE USER
----------------
-First makesure server is running by typing:
-    python manage.py runserver
-
-POST-> Create or insert afresh:
-    in postman, select POST
-    then paste : http://127.0.0.1:8000/accounts/users/ as your endpoint.
-    then in the body select row, then select in the text, select JSON
-    and paste the following:
-        {
-            "firstName":"Ken",
-            "lastName":"Wainaina",
-            "email":"ken@gmail.com",
-            "phone":"0712345678",
-            "password":"1234",
-            "username":"ken"
-        }
-    Then click POST
-
-GET -> Retrieve all data 
-    then paste : http://127.0.0.1:8000/accounts/users/ as your endpoint.
-    Then select GET
-
-GET - > Retreive one data item by id
-    paste http://127.0.0.1:8000/accounts/users/2/ as endpoint
-
-PUT -> Update one by ID
-    paste http://127.0.0.1:8000/accounts/users/2/ as end point then GET
-    paste the following in the body after selecting raw and in the text select json ... then paste
-        {
-            "firstName":"Ken",
-            "lastName":"Wainaina",
-            "email":"ken@gmail.com",
-            "phone":"0712345678",
-            "password":"1234",
-            "username":"ken"
-        }
-
-    Then click PUT
-
-DELETE -> 
-    http://127.0.0.1:8000/accounts/users/2/ as endpoint, Then click delete
-
-
-
-CREATE IMMUNIZATION
----------------
-First makesure server is running by typing:
-    python manage.py runserver
-
-POST-> Create or insert afresh:
-    in postman, select POST
-    then paste : http://127.0.0.1:8000/immunization/ as your endpoint.
-    then in the body select row, then select in the text, select JSON
-    and paste the following:
-        {
-            "firstName":"Ken",
-            "lastName":"Wainaina",
-            "email":"ken@gmail.com",
-            "phone":"0712345678",
-            "age":"22",
-            "nationId":99676545,
-            "immunizationName":"JonsonAndJonson",
-            "immunizationDosageLevel": "1",
-            "immunizationDate":"23-11-2022",
-            "nextImmunizationDate":"23-11-2023",
-            "county":"Kiambu"
-        }
-    Then click POST
-
-GET -> Retrieve all data 
-    then paste : http://127.0.0.1:8000/immunization/ as your endpoint.
-    Then select GET
-
-GET - > Retreive one data item by email
-    paste http://127.0.0.1:8000/immunization/ as endpoint
-
-PUT -> Update one by email
-    paste http://127.0.0.1:8000/immunization/ as end point then GET
-    paste the following in the body after selecting raw and in the text select json ... then paste
-        {
-            "firstName":"Ken",
-            "lastName":"Wainaina",
-            "email":"ken@gmail.com",
-            "phone":"0712345678",
-            "age":"22",
-            "nationId":99676545,
-            "immunizationName":"JonsonAndJonson",
-            "immunizationDosageLevel": "1",
-            "immunizationDate":"23-11-2022",
-            "nextImmunizationDate":"23-11-2023",
-            "county":"Kiambu"
-        }
-
-    Then click PUT
-
-DELETE -> 
-    http://127.0.0.1:8000/immunization/ as endpoint, Then click delete
-
-
+    python manage.py startapp accounts
+    python manage.py startapp posts
